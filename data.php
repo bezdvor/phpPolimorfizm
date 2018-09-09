@@ -3,7 +3,7 @@ require_once 'classes.php';
 $data = array (
     (object) array(
         'id'=>1,
-        'title'=> 'HelloWorld',
+        'title'=> 'Hello World',
         'descr'=>'Lorem ipsum dolor sit amet',
         'type'=>'TextArticle'),
     (object) array(
@@ -85,7 +85,6 @@ $data = array (
             'https://astronline.pro/og-image.jpg',
             'http://www.haseloff-lab.org/education/iGEM/files/stacks-image-35ce2e8.png'
         ),
-        'link'=>'http://htmlbook.ru/',
         'type'=>'ImagePack'
     )
 );

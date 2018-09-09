@@ -43,10 +43,6 @@ abstract class Article {
 class TextArticle extends Article {}
 
 class TextImage extends Article {
-//	function __construct($title, $descr, $img) {
-//		parent::__construct($title, $descr);
-//		$this->img = $img;
-//	}
     public function getImage() {
         return $this->img;
     }
@@ -109,11 +105,11 @@ class ImageLink extends Article{
 class ImagePack extends Article{
     public function render()
     {
-echo '<section class="sectionWrap" style="display:flex; flex-direction:row;">'.
-    '<div class="divleft"><a href="/phpPolimorfizm/innerPage.php?id='.$this->id.'"><img style="height: 75px; margin:auto;" src="'.$this->img[0].'"/></a></div>'.
-    '<div class="divcenter"><p>'.$this->getDesc().'</p></div>'.
-    '<div class="divright"><img style="height: 75px; margin:auto;" src="'.$this->img[1].'"/></div>'.
-    '</section>';
+        echo '<section class="sectionWrap" style="display:flex; flex-direction:row;">'.
+            '<div class="divleft"><a href="/phpPolimorfizm/innerPage.php?id='.$this->id.'"><img style="height: 75px; margin:auto;" src="'.$this->img[0].'"/></a></div>'.
+            '<div class="divcenter"><p>'.$this->getDesc().'</p></div>'.
+            '<div class="divright"><img style="height: 75px; margin:auto;" src="'.$this->img[1].'"/></div>'.
+            '</section>';
     }
     public function renderAll()
     {
@@ -121,14 +117,14 @@ echo '<section class="sectionWrap" style="display:flex; flex-direction:row;">'.
             '<h2>'.$this->title.
             '</h2>'.
             '<p>'.$this->getDesc().'</p>';
-            ?>
-        <?php
-foreach ($this->img as $value){
-    echo '<img style="height: 75px; margin:auto;" src="'.$value.'"/>';
-}
         ?>
-<?
-            '</section>';
+        <?php
+        foreach ($this->img as $value){
+            echo '<img style="height: 75px; margin:auto;" src="'.$value.'"/>';
+        }
+        ?>
+        <?
+        '</section>';
     }
 }
 
